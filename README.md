@@ -10,31 +10,22 @@ Traditional ethanol stoves use a sliding plate mechanism to control the flame, w
 
 The system is described in both Cartesian $(x,y)$ and polar $(r,\theta)$ coordinates, where:
 
+$R$: outer radius of aperture.
+
 $A(r, \theta)$: Combined aperture area within an annular ring at radius $r$ (width $\mathrm{d}r$, circumference $2\pi r$) for rotation angle $\theta$ in cm $^2$.
 
-$A_\mathrm{tot}(\theta) = \sum_{r=0}^{r_\mathrm{max}} A(r, \theta)$
-Total combined aperture area at rotation angle $\theta$ in cm $^2$.
+$A_\mathrm{tot}(\theta) = \sum_{r=0}^{R} A(r, \theta)$: Total combined aperture area at rotation angle $\theta$ in cm $^2$.
 
-$f(r, \theta)$: Combined aperture area within an annular ring, normalized by ring geometry:
-$f(r, \theta) = \frac{A(r, \theta)}{\pi r\mathrm{d}r}$
-This describes the local density of openings at radius $r$.
+$f(r, \theta) = \frac{A(r, \theta)}{\pi r\mathrm{d}r}$: Combined aperture area within an annular ring, normalized by ring geometry. This describes the local density of openings at radius $r$.
 
-$f_\mathrm{tot}(\theta)$: Total relative combined aperture area:
-$f_\mathrm{tot}(\theta) = \frac{\sum_{r=0}^{r_\mathrm{max}} A(r, \theta)}{\pi r_\mathrm{max}^2} \cdot 100\%$
+$f_\mathrm{tot}(\theta) = \frac{\sum_{r=0}^{R} A(r, \theta)}{\pi R^2} \cdot 100\%$: Relative total combined aperture area in $\%$.
 
-$r_\mathrm{com}(\theta)$: Center of mass radius of the open area:
-$r_\mathrm{com}(\theta) = \frac{\sum_{r=0}^{r_\mathrm{max}} r \cdot A(r, \theta)}{\sum_{r=0}^{r_\mathrm{max}} A(r, \theta)}$
-
-In the continuum limit ($\mathrm{d}r \to 0$), the sums become integrals:
-$A_\mathrm{tot}(\theta) = \int_0^{r_\mathrm{max}} A(r, \theta)\,\mathrm{d}r$
-$r_\mathrm{com}(\theta) = \frac{\int_0^{r_\mathrm{max}} r \cdot A(r, \theta)\,\mathrm{d}r}{\int_0^{r_\mathrm{max}} A(r, \theta)\,\mathrm{d}r}$
+$r_\mathrm{com}(\theta) = \frac{\sum_{r=0}^{R} r \cdot A(r, \theta)}{\sum_{r=0}^{R} A(r, \theta)}$: Center of mass radius of the combined aperture area in cm.
 
 Target parameter ranges for optimal combustion control:
-$$
-\theta &\in [0°, 30°] && \text{(rotation angle)} \\
-f_\mathrm{tot}(\theta) &\in [0\%, 20\%] && \text{(total open fraction)} \\
-r_\mathrm{com}(\theta) &\in [0, r_\mathrm{max}] && \text{(COM radius)}
-$$
+- $\theta &\in [0, 30] && \text{(rotation angle)}$
+- $f_\mathrm{tot}(\theta) &\in [0\%, 20\%] && \text{(total open fraction)}$
+- $r_\mathrm{com}(\theta) &\in [0, R] && \text{(COM radius)}$
 
 The design aims for monotonic growth in both $r_\mathrm{com}$ and $f_\mathrm{tot}$ as $\theta$ increases, ensuring smooth and predictable combustion control.
 
