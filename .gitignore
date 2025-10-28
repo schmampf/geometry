@@ -1,0 +1,20 @@
+# Virtual environments
+.venv/
+env/
+venv/
+.mypy_cache/
+.old/
+
+# Python cache files
+*.pyc
+*.pyo
+*.pyd
+*.npz
+__pycache__/
+utilities/__pycache__/
+
+# macOS system files
+*.DS_Store
+.DS_Store
+*DS_Store
+**/.DS_Store
