@@ -23,7 +23,7 @@ $A_\theta$: is the transparent area of the two apertures at fixed rotation angle
 
 $A_\theta(r)$: is the area within ring at r with width dr in units of cm
 
-$\rangle A\langle_r(\theta)$: the total area, depending on the roation angle
+$\langle A\rangle_r(\theta)$: the total area, depending on the roation angle
 
 $A_\mathrm{rel} = A(r)$
 
