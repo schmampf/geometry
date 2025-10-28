@@ -23,9 +23,10 @@ $f_\mathrm{tot}(\theta) = \frac{\sum_{r=0}^{R} A(r, \theta)}{\pi R^2} \cdot 100\
 $r_\mathrm{com}(\theta) = \frac{\sum_{r=0}^{R} r \cdot A(r, \theta)}{\sum_{r=0}^{R} A(r, \theta)}$: Center of mass radius of the combined aperture area in cm.
 
 Target parameter ranges for optimal combustion control:
-- $\theta &\in [0, 30] && \text{(rotation angle)}$
-- $f_\mathrm{tot}(\theta) &\in [0\%, 20\%] && \text{(total open fraction)}$
-- $r_\mathrm{com}(\theta) &\in [0, R] && \text{(COM radius)}$
+
+- rotation angle $\theta \in [0, 30]$ deg
+- Relative total combined aperture area $f_\mathrm{tot}(\theta) \in [0, 20\%]$
+- COM radius $r_\mathrm{com}(\theta) \in [0, R]$
 
 The design aims for monotonic growth in both $r_\mathrm{com}$ and $f_\mathrm{tot}$ as $\theta$ increases, ensuring smooth and predictable combustion control.
 
