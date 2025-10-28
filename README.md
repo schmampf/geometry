@@ -1,29 +1,38 @@
-## Geometry
+# Geometry: Dynamic Aperture Design
 
-This project was inspired by an ethanol stove I borrowed from my neighbors during a heating outage in our apartment this October. Beyond its practical purpose of keeping us warm, the mesmerizing flame patterns sparked an interesting geometric challenge.
+This project explores the geometric optimization of a variable aperture system, inspired by observations of an ethanol stove's flame control mechanism. The goal is to create a safer and more efficient method of controlling combustion through precisely designed geometric patterns.
 
-The basic concept of an ethanol stove is simple: ethanol fuel burns in a bowl, with a cover containing an adjustable aperture to control the flame. Traditionally, this adjustment is made by sliding a plate over the aperture, which can be dangerous due to proximity to the flames.
+## Project Overview
 
-This project explores an alternative approach: using two superimposed plates with specially designed apertures. By rotating these plates relative to each other, we can dynamically control the effective cross-section of the opening. The design aims to create a small central opening that gradually expands with rotation, eventually transitioning into an outer ring pattern.
+Traditional ethanol stoves use a sliding plate mechanism to control the flame, which can be hazardous due to proximity to the heat source. This project proposes an innovative solution: two superimposed plates with specially designed apertures that can be rotated relative to each other. This rotation creates a dynamic opening pattern that transitions from a small central aperture to an expanding ring, allowing precise control over the combustion process.
 
-The geometry of these apertures is crucial for optimal combustion. Since oxygen can only penetrate a few centimeters into the ethanol vapor, controlling the aperture's diameter is essential. If the opening becomes too large, it leads to uneven burning and increased production of soot and other harmful emissions. This project implements mathematical models to optimize these geometric patterns for efficient and clean combustion.
+## Physical Parameters
 
-### physics
+The system is governed by several key parameters:
 
-crucial control paramter are:
+- $(x,y)$: Cartesian coordinates
+- $(r, \theta)$: Radial coordinates
+- $\theta$: Rotation angle (optimal range: 0° to 30°)
+- $r_\mathrm{com}$: Center-of-mass radius of the aperture (range: 0 to $r_\mathrm{max}$)
+- $A_\mathrm{rel}$: Relative aperture area (target range: 0 to 20%)
 
-$(x,y)$: crthesean coordinates
+The design aims for monotonic growth in both $r_\mathrm{com}$ and $A_\mathrm{rel}$ as the rotation angle increases, ensuring smooth and predictable control over the combustion process.
 
-$(r, \theta)$: radial coordinates
+### Definitions
+$A_\theta$: is the transparent area of the two apertures at fixed rotation angle $\theta$ in cm$^2$
 
-$\theta$: the rotation angle. idealy in between 0 to 30°.
+$A_\theta(r)$: is the area within ring at r with width dr in units of cm
 
-$r_com$: the radius, at which most of the area is open (center-of-mass). idealy from 0 to $r_\mathrm{max}$
+$\rangle A\langle_r(\theta)$: the total area, depending on the roation angle
 
-$A_\mathrm{rel}$: the relative area of the aperture
+$A_\mathrm{rel} = A(r)$
 
-i expect both paramter $r_com$ and $A_\mathrm{rel}$ two grow increasingly. from 0 to roughly 20 %.
+## Current Development Status
 
-### current state
+While simple geometric solutions like spiral patterns are possible, this project explores more sophisticated approaches:
 
-A first idea comes from twisted bilayers of graphene, forming a nice Moiré Pattern.
+1. Implementation of 2D grids and monohedral tilings
+2. Investigation of Moiré patterns inspired by twisted bilayer graphene
+3. Exploration of 2D quasicrystals and Penrose tilings
+
+The current focus is on understanding and implementing quasicrystal patterns, which offer unique geometric properties that could provide optimal aperture control. This investigation has led to deep theoretical study, including detailed analysis of Penrose tiling systems and their applications to this specific problem.
