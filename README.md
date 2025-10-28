@@ -25,12 +25,14 @@ $r_\mathrm{com}(\theta) = \frac{\sum_{r=0}^{R} r \cdot A(r, \theta)}{\sum_{r=0}^
 Target parameter ranges for optimal combustion control:
 
 - rotation angle $\theta \in [0, 30]$ deg
-- Relative total combined aperture area $f_\mathrm{tot}(\theta) \in [0, 20\%]$
+- Relative total combined aperture area $f_\mathrm{tot}(\theta) \in [0, 20]\%$
 - COM radius $r_\mathrm{com}(\theta) \in [0, R]$
 
 The design aims for monotonic growth in both $r_\mathrm{com}$ and $f_\mathrm{tot}$ as $\theta$ increases, ensuring smooth and predictable combustion control.
 
 ## Current Development Status
+
+At first an analysis and visualization tool has been developed.
 
 While simple geometric solutions like spiral patterns are possible, this project explores more sophisticated approaches:
 
@@ -39,3 +41,7 @@ While simple geometric solutions like spiral patterns are possible, this project
 3. Exploration of 2D quasicrystals and Penrose tilings
 
 The current focus is on understanding and implementing quasicrystal patterns, which offer unique geometric properties that could provide optimal aperture control. This investigation has led to deep theoretical study, including detailed analysis of Penrose tiling systems and their applications to this specific problem.
+
+### Twisted Bilayer Graphene
+
+![twisted bilayer graphene](https://github.com/schmampf/geometry/blob/main/readme/geometric_animation.mp4)
