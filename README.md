@@ -18,15 +18,15 @@ $A_\mathrm{tot}(\theta) = \sum_{r=0}^{R} A(r, \theta)$: Total combined aperture 
 
 $f(r, \theta) = \frac{A(r, \theta)}{\pi r\mathrm{d}r}$: Combined aperture area within an annular ring, normalized by ring geometry. This describes the local density of openings at radius $r$.
 
-$f_\mathrm{tot}(\theta) = \frac{\sum_{r=0}^{R} A(r, \theta)}{\pi R^2} \cdot 100\%$: Relative total combined aperture area in $\%$.
+$f_\mathrm{tot}(\theta) = \frac{\sum_{r=0}^{R} A(r, \theta)}{\pi R^2}$: Relative total combined aperture area.
 
 $r_\mathrm{com}(\theta) = \frac{\sum_{r=0}^{R} r \cdot A(r, \theta)}{\sum_{r=0}^{R} A(r, \theta)}$: Center of mass radius of the combined aperture area in cm.
 
 Target parameter ranges for optimal combustion control:
 
-- rotation angle $\theta \in [0, 30]$ deg
-- Relative total combined aperture area $f_\mathrm{tot}(\theta) \in [0, 20]\%$
-- COM radius $r_\mathrm{com}(\theta) \in [0, R]$
+- $\theta \in [0, 30]$ deg
+- $f_\mathrm{tot}(\theta) \in [0, 20]$ %
+- $r_\mathrm{com}(\theta) \in [0, R]$
 
 The design aims for monotonic growth in both $r_\mathrm{com}$ and $f_\mathrm{tot}$ as $\theta$ increases, ensuring smooth and predictable combustion control.
 
