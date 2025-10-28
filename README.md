@@ -8,54 +8,40 @@ Traditional ethanol stoves use a sliding plate mechanism to control the flame, w
 
 ## Physical Parameters
 
-The system is governed by several key parameters:
+The system is described in both Cartesian $(x,y)$ and polar $(r,\theta)$ coordinates, where:
 
-- $(x,y)$: Cartesian coordinates
-- $(r, \theta)$: Radial coordinates
-- $\theta$: Rotation angle (optimal range: 0° to 30°)
-- $r_\mathrm{com}$: Center-of-mass radius of the aperture (range: 0 to $r_\mathrm{max}$)
-- $A_\mathrm{rel}$: Relative aperture area (target range: 0 to 20%)
+$A(r, \theta)$: Combined aperture area within an annular ring at radius $r$ (width $\mathrm{d}r$, circumference $2\pi r$) for rotation angle $\theta$ in cm$^2$
 
-The design aims for monotonic growth in both $r_\mathrm{com}$ and $A_\mathrm{rel}$ as the rotation angle increases, ensuring smooth and predictable control over the combustion process.
+$A_\mathrm{tot}(\theta) = \sum_{r=0}^{r_\mathrm{max}} A(r, \theta)$
+Total combined aperture area at rotation angle $\theta$ in cm$^2$
 
-### Definitions
+$f(r, \theta)$: Combined aperture area within an annular ring, normalized by ring geometry:
+$f(r, \theta) = \frac{A(r, \theta)}{\pi r\mathrm{d}r}$
+This describes the local density of openings at radius $r$.
 
-Let $A_r(\theta)$ be the open area in an annular ring of radius $r$ and radial width $\Delta r$ at rotation angle $\theta$ (units: cm$^2$). In the continuum limit define an area density $a(r,\theta)$ so that
+$f_\mathrm{tot}(\theta)$: Total relative combined aperture area:
+\[f_\mathrm{tot}(\theta) = \frac{\sum_{r=0}^{r_\mathrm{max}} A(r, \theta)}{\pi r_\mathrm{max}^2} \cdot 100\%\]
 
-\[A_r(\theta) \approx a(r,\theta)\,\Delta r.\]
+$r_\mathrm{com}(\theta)$: Center of mass radius of the open area:
+\[r_\mathrm{com}(\theta) = \frac{\sum_{r=0}^{r_\mathrm{max}} r \cdot A(r, \theta)}{\sum_{r=0}^{r_\mathrm{max}} A(r, \theta)}\]
 
-Total open area (discrete):
+In the continuum limit ($\mathrm{d}r \to 0$), the sums become integrals:
+\[A_\mathrm{tot}(\theta) = \int_0^{r_\mathrm{max}} A(r, \theta)\,\mathrm{d}r\]
+\[r_\mathrm{com}(\theta) = \frac{\int_0^{r_\mathrm{max}} r \cdot A(r, \theta)\,\mathrm{d}r}{\int_0^{r_\mathrm{max}} A(r, \theta)\,\mathrm{d}r}\]
 
-\[A(\theta) = \sum_{r} A_r(\theta) \approx \int_0^{r_{\mathrm{max}}} a(r,\theta)\,dr \quad(\text{units: cm}^2)\]
+Target parameter ranges for optimal combustion control:
+\begin{align*}
+\theta &\in [0°, 30°] && \text{(rotation angle)} \\
+f_\mathrm{tot}(\theta) &\in [0\%, 20\%] && \text{(total open fraction)} \\
+r_\mathrm{com}(\theta) &\in [0, r_\mathrm{max}] && \text{(COM radius)}
+\end{align*}
 
-Relative open area (percent):
-
-\[A_{\mathrm{rel}}(\theta) = 100\cdot \frac{A(\theta)}{\pi r_{\mathrm{max}}^2} \quad(\%)\]
-
-Center-of-mass radius (first moment):
-
-\[r_{\mathrm{com}}(\theta) = \frac{\sum_r r\,A_r(\theta)}{\sum_r A_r(\theta)} \approx \frac{\int_0^{r_{\mathrm{max}}} r\,a(r,\theta)\,dr}{\int_0^{r_{\mathrm{max}}} a(r,\theta)\,dr} \quad(\text{cm})\]
-
-Local open fraction along the circumference (unitless). For an annulus at radius $r$:
-
-\[f(r,\theta) = \frac{A_r(\theta)}{2\pi r\,\Delta r} \in [0,1]\]
-
-This gives the fraction of the ring's circumference that is open at radius $r$ and rotation $\theta$.
-
-Notes:
-
-- The discrete sums assume a radial binning with width $\Delta r$. For accurate measurements use $\Delta r \ll r_{\mathrm{max}}$.
-- Continuous forms use the area density $a(r,\theta)$ and integrals over $r \in [0,r_{\mathrm{max}}]$.
-- Typical parameter ranges used in this project:
-  - $\theta$: 0°–30° (rotation angle)
-  - $A_{\mathrm{rel}}$: 0%–20% (relative open area)
-  - $r_{\mathrm{com}}$: 0–$r_{\mathrm{max}}$ (cm)
+The design aims for monotonic growth in both $r_\mathrm{com}$ and $f_\mathrm{tot}$ as $\theta$ increases, ensuring smooth and predictable combustion control.
 
 ## Current Development Status
 
 While simple geometric solutions like spiral patterns are possible, this project explores more sophisticated approaches:
 
-0. Implementation a stable analysis tool
 1. Implementation of 2D grids and monohedral tilings
 2. Investigation of Moiré patterns inspired by twisted bilayer graphene
 3. Exploration of 2D quasicrystals and Penrose tilings
