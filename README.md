@@ -44,4 +44,7 @@ The current focus is on understanding and implementing quasicrystal patterns, wh
 
 ### Twisted Bilayer Graphene
 
-![twisted bilayer graphene](https://github.com/schmampf/geometry/blob/main/readme/geometric_animation.gif)
+Here we can see increasing $f_\mathrm{tot}$, however $r_\mathrm{com}$ isn't moving at all.
+
+![twisted bilayer graphene animation](https://github.com/schmampf/geometry/blob/main/readme/geometric_animation.gif)
+![twisted bilayer graphene analysis](https://github.com/schmampf/geometry/blob/main/readme/analysis.png)
